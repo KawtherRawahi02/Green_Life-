@@ -9,11 +9,11 @@ class LocationModel {
     Location location = Location();
 
     await location.getCurrentLocation();
-    //openWeatherAPIURLمعرفه قبل
+    
     NetworkHelper helper = NetworkHelper(
         '$openWeatherAPIURL?lat=${location.lat}&lon=${location.long}&appid=$apiKey&units=metric');
 
-    // هل هذي اللي ترجع الجايسون
+    
     var weatherData = await helper.getWeatherData();
     return weatherData;
   }
